@@ -1,6 +1,7 @@
 package org.lesson.java.spring.controller;
 
 import org.lesson.java.spring.Movie;
+import org.lesson.java.spring.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,6 +55,26 @@ public class PageController {
 		  }
 		  
 		  return bestMovies;
+		  
+	  }
+	  
+	  private String getBestSongs() throws FileNotFoundException {
+		  
+		  String bestSongs = "";
+		  ArrayList<Song> bestSongsList = BestOfListManager.generateBestSongs();
+		  
+		  
+		  //bestMoviesList =  ;
+		  
+		  for(int i = 0; i < bestSongsList.size(); i++ ) {
+			  
+			  bestSongs = bestSongs + bestSongsList.get(i).getSongTitle();
+			  
+			  if(i < bestSongsList.size() - 1 )
+				  bestSongs = bestSongs + ", ";
+		  }
+		  
+		  return bestSongs;
 		  
 	  }
 	  
