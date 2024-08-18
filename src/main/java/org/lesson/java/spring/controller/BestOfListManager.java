@@ -10,6 +10,7 @@ import org.lesson.java.spring.Movie;
 public class BestOfListManager {
 	
 	static int movieCount = 0;
+	static int songCount = 0;
 	
 	
 	public static Movie getMovieIstance() {
@@ -21,6 +22,19 @@ public class BestOfListManager {
 		movieCount++;
 		
 		return movie;
+		
+	}
+	
+	
+	public static Movie getSongIstance() {
+		
+		String songId = String.format("%09d", songCount);
+			
+		Movie song  =  new Movie(songId);
+		
+		songCount++;
+		
+		return song;
 		
 	}
 	
