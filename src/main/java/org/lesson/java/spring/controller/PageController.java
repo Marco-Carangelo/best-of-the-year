@@ -33,6 +33,16 @@ public class PageController {
 		return "movies";
 		  
 	  }
+	  
+	  @GetMapping("/songs")
+	  public String songs(Model model) throws FileNotFoundException {
+		  
+		  model.addAttribute("name", name);
+		  model.addAttribute("songList", getBestSongs());
+		  
+		return "songs";
+		  
+	  }
 
 	  
 	  
