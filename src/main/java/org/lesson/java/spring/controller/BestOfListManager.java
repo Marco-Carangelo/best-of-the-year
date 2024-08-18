@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.lesson.java.spring.Movie;
+import org.lesson.java.spring.Song;
 
 public class BestOfListManager {
 	
@@ -26,11 +27,11 @@ public class BestOfListManager {
 	}
 	
 	
-	public static Movie getSongIstance() {
+	public static Song getSongIstance() {
 		
 		String songId = String.format("%09d", songCount);
 			
-		Movie song  =  new Movie(songId);
+		Song song  =  new Song(songId);
 		
 		songCount++;
 		
@@ -59,6 +60,24 @@ public class BestOfListManager {
 		return bestMovies;
 	}
 	
+	public static ArrayList<Song> generateBestSongs() throws FileNotFoundException {
+		
+		ArrayList<Song> bestSongs = new ArrayList<Song>();
+		
+		
+		File myFile = new File("./bestSongs.txt");
+		Scanner myReader = new Scanner(myFile);
+		
+		while(myReader.hasNextLine()){
+			bestSongs.add(getSongIstance());
+			bestSongs.get(songCount-1).setSongTitle(myReader.nextLine());
+			}
+		
+		myReader.close();
+		
+	
+		return bestSongs;
+	}
 	
 
 }
