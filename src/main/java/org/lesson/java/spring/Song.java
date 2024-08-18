@@ -2,14 +2,14 @@ package org.lesson.java.spring;
 
 public class Song {
 	
-	private int songId;
+	private String songId;
 	private String songTitle;
 	
 	
-	public Song(int songId, String songTitle) {
+	public Song(String songId) {
 		
 		this.songId = songId;
-		this.songTitle = songTitle;
+		this.songTitle = "";
 	}
 
 
@@ -23,7 +23,7 @@ public class Song {
 	}
 
 
-	public int getSongId() {
+	public String getSongId() {
 		return songId;
 	}	
 	
