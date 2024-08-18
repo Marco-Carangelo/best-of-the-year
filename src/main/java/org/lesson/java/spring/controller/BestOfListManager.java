@@ -49,9 +49,13 @@ public class BestOfListManager {
 		Scanner myReader = new Scanner(myFile);
 		myReader.useDelimiter(", ");
 		
+		
+		int i = 0;
 		while(myReader.hasNext()){
+			
 			bestMovies.add(getMovieIstance());
-			bestMovies.get(movieCount-1).setMovieTitle(myReader.next());
+			bestMovies.get(i).setMovieTitle(myReader.next());
+			i++;
 			}
 		
 		myReader.close();
@@ -68,9 +72,12 @@ public class BestOfListManager {
 		File myFile = new File("./bestSongs.txt");
 		Scanner myReader = new Scanner(myFile);
 		
+		
+		int i = 0;
 		while(myReader.hasNextLine()){
 			bestSongs.add(getSongIstance());
-			bestSongs.get(songCount-1).setSongTitle(myReader.nextLine());
+			bestSongs.get(i).setSongTitle(myReader.nextLine());
+			i++;
 			}
 		
 		myReader.close();
