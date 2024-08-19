@@ -10,10 +10,11 @@ import org.lesson.java.spring.Song;
 
 public class BestOfListManager {
 	
+	//Variable used to count the object instance and to assign an incremental Id
 	static int movieCount = 0;
 	static int songCount = 0;
 	
-	
+	//Method that create a new movie object and assign an incremental Id to it, formatted in 9 digits
 	public static Movie getMovieIstance() {
 		
 		String movieId = String.format("%09d", movieCount);
@@ -27,6 +28,7 @@ public class BestOfListManager {
 	}
 	
 	
+	//Method that create a new song object and assign an incremental Id to it, formatted in 9 digits
 	public static Song getSongIstance() {
 		
 		String songId = String.format("%09d", songCount);
@@ -39,7 +41,8 @@ public class BestOfListManager {
 		
 	}
 	
-	
+	//Method that read the movie titles from a txt file, create a new object based on that and put it in a arraylist
+	//The file file opened with this method have a list separated by ',' characters
 	public static ArrayList<Movie> generateBestMovies() throws FileNotFoundException {
 		
 		ArrayList<Movie> bestMovies = new ArrayList<Movie>();
@@ -64,6 +67,8 @@ public class BestOfListManager {
 		return bestMovies;
 	}
 	
+	//Method that read the song titles from a txt file, create a new object based on that and put it in a arraylist
+	//The file file opened with this method have a list separated by lines
 	public static ArrayList<Song> generateBestSongs() throws FileNotFoundException {
 		
 		ArrayList<Song> bestSongs = new ArrayList<Song>();
