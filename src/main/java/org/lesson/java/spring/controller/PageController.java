@@ -47,15 +47,16 @@ public class PageController {
 	  
 	  
 	  
+	  //Method that return a string with the titles of movie objects
 	  
 	  private String getBestMovies() throws FileNotFoundException {
 		  
 		  String bestMovies = "";
+		  
+		  //List used to acquire the movie objects 
 		  ArrayList<Movie> bestMoviesList = BestOfListManager.generateBestMovies();
-		  
-		  
-		  //bestMoviesList =  ;
-		  
+		  		  
+		  //Cycle used to concatenate the movie titles into one string
 		  for(int i = 0; i < bestMoviesList.size(); i++ ) {
 			  
 			  bestMovies = bestMovies + bestMoviesList.get(i).getMovieTitle();
@@ -68,13 +69,13 @@ public class PageController {
 		  
 	  }
 	  
+	//Method that return a string with the titles of song objects, analog to getBestMovie method
+	  
 	  private String getBestSongs() throws FileNotFoundException {
 		  
 		  String bestSongs = "";
 		  ArrayList<Song> bestSongsList = BestOfListManager.generateBestSongs();
 		  
-		  
-		  //bestMoviesList =  ;
 		  
 		  for(int i = 0; i < bestSongsList.size(); i++ ) {
 			  
