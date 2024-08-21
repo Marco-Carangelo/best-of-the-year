@@ -32,7 +32,7 @@ public class PageController {
 		  
 		  for(Movie movie : getBestMovies()) {
 			  
-			  bestMovies += movie.getMovieTitle() + ", ";		  
+			  bestMovies += movie.getMovieTitle() + " , ";		  
 			  
 		  }
 		  
@@ -40,7 +40,7 @@ public class PageController {
 		  model.addAttribute("title", "List of the BEST movies");
 		  model.addAttribute("list", bestMovies);
 		  
-		  return "list";
+		  return "lists";
 		  
 	  }
 	  
@@ -51,7 +51,7 @@ public class PageController {
 		  
 		  for(Song song : getBestSongs()) {
 			  
-			  bestSongs += song.getSongTitle() + ", ";	
+			  bestSongs += song.getSongTitle() + " , ";	
 			  
 		  }
 		  
@@ -60,7 +60,7 @@ public class PageController {
 		  model.addAttribute("list", bestSongs);
 		  
 		  
-		  return "list";
+		  return "lists";
  
 	  }
 
