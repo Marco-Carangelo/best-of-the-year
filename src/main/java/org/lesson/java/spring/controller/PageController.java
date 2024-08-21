@@ -70,7 +70,7 @@ public class PageController {
 	  
 	  
 	  
-	  @GetMapping("/song{id}")
+	  @GetMapping("/song/{id}")
 	  public String songDetail(Model model, @PathVariable("id") Integer songId){
 		 
 		  String songName = "";
@@ -93,7 +93,7 @@ public class PageController {
  
 	  }
 	  
-	  @GetMapping("/movie{id}")
+	  @GetMapping("/movie/{id}")
 	  public String movieDetail(Model model, @PathVariable("id") Integer movieId){
 		 
 		  String movieName = "";
