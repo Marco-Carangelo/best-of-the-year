@@ -71,7 +71,7 @@ public class PageController {
 	  
 	  
 	  @GetMapping("/song{id}")
-	  public String songDetauk(Model model, @PathVariable("id") Integer songId){
+	  public String songDetail(Model model, @PathVariable("id") Integer songId){
 		 
 		  String songName = "";
 		  
@@ -89,6 +89,28 @@ public class PageController {
 		  model.addAttribute("name", songName);
 		  model.addAttribute("title", "Song detail");
 		  
+		  return "detail";
+ 
+	  }
+	  
+	  @GetMapping("/song{id}")
+	  public String movieDetail(Model model, @PathVariable("id") Integer movieId){
+		 
+		  String movieName = "";
+		  
+		  for(Movie movie : getBestMovies()) {
+			  
+			  if (movie.getMovieId() == movieId) {
+				  
+				  movieName = movie.getMovieTitle();	
+				  break;
+			  }
+			  
+			  
+		  }
+		  
+		  model.addAttribute("name", movieName);
+		  model.addAttribute("title", "Movie detail");
 		  
 		  return "detail";
  
