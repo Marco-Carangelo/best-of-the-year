@@ -5,6 +5,7 @@ import org.lesson.java.spring.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.FileNotFoundException;
@@ -45,7 +46,7 @@ public class PageController {
 	  }
 	  
 	  @GetMapping("/songs")
-	  public String songs(Model model) throws FileNotFoundException {
+	  public String songs(Model model) {
 		 
 		  String bestSongs = "";
 		  
@@ -66,7 +67,32 @@ public class PageController {
 
 	  
 	  
-
+	  
+	  
+	  
+	  @GetMapping("/song{id}")
+	  public String songDetauk(Model model, @PathVariable("id") Integer songId){
+		 
+		  String songName = "";
+		  
+		  for(Song song : getBestSongs()) {
+			  
+			  if (song.getSongId() == songId) {
+				  
+				  songName = song.getSongTitle();	
+				  break;
+			  }
+			  
+			  
+		  }
+		  
+		  model.addAttribute("name", songName);
+		  model.addAttribute("title", "Song detail");
+		  
+		  
+		  return "detail";
+ 
+	  }
 	  
 	  private List<Movie> getBestMovies(){
 		  
