@@ -2,13 +2,13 @@ package org.lesson.java.spring;
 
 public class Movie {
 	
-	private String movieId;
+	private Integer movieId;
 	private String movieTitle;
 	
-	public Movie(String movieId) {
+	public Movie(int movieId, String movieTitle) {
 		
 		this.movieId = movieId;
-		this.movieTitle = "";
+		this.movieTitle = movieTitle;
 	}	
 	
 	
@@ -22,13 +22,15 @@ public class Movie {
 	public void setMovieTitle(String movieTitle) {
 		this.movieTitle = movieTitle;
 	}
+	
 
-
-	public String getMovieId() {
+	public int getMovieId() {
 		return movieId;
 	}
 
-
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
+	}
 	
 
 }
