@@ -93,7 +93,7 @@ public class PageController {
  
 	  }
 	  
-	  @GetMapping("/song{id}")
+	  @GetMapping("/movie{id}")
 	  public String movieDetail(Model model, @PathVariable("id") Integer movieId){
 		 
 		  String movieName = "";
