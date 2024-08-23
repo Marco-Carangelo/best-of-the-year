@@ -2,34 +2,34 @@ package org.lesson.java.spring;
 
 public class Movie {
 	
-	private Integer movieId;
-	private String movieTitle;
+	private Integer id;
+	private String title;
 	
 	public Movie(int movieId, String movieTitle) {
 		
-		this.movieId = movieId;
-		this.movieTitle = movieTitle;
+		this.id = movieId;
+		this.title = movieTitle;
 	}	
 	
 	
 	
 	
-	public String getMovieTitle() {
-		return movieTitle;
+	public String getTitle() {
+		return title;
 	}
 
 
-	public void setMovieTitle(String movieTitle) {
-		this.movieTitle = movieTitle;
+	public void setTitle(String movieTitle) {
+		this.title = movieTitle;
 	}
 	
 
-	public int getMovieId() {
-		return movieId;
+	public int getId() {
+		return id;
 	}
 
-	public void setMovieId(int movieId) {
-		this.movieId = movieId;
+	public void seId(int movieId) {
+		this.id = movieId;
 	}
 	
 

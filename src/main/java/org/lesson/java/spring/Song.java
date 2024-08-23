@@ -2,33 +2,33 @@ package org.lesson.java.spring;
 
 public class Song {
 	
-	private Integer songId;
-	private String songTitle;
+	private Integer id;
+	private String title;
 	
 	
 	public Song(Integer songId, String songTitle) {
 		
-		this.songId = songId;
-		this.songTitle = songTitle;
+		this.id = songId;
+		this.title = songTitle;
 	}
 
 
-	public String getSongTitle() {
-		return songTitle;
+	public String getTitle() {
+		return title;
 	}
 
 
-	public void setSongTitle(String songTitle) {
-		this.songTitle = songTitle;
+	public void setTitle(String songTitle) {
+		this.title = songTitle;
 	}
 
 
-	public Integer getSongId() {
-		return songId;
+	public Integer getId() {
+		return id;
 	}	
 	
-	public void setSongTitle(Integer songId) {
-		this.songId = songId;
+	public void setId(Integer songId) {
+		this.id = songId;
 	}
 	
 }
