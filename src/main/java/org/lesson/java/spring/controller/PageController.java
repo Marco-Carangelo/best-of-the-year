@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.io.FileNotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,19 +27,12 @@ public class PageController {
 	  }
 	  
 	  @GetMapping("/movies")
-	  public String movies(Model model) throws FileNotFoundException {
+	  public String movies(Model model){
 		  
-		  String bestMovies = "";
-		  
-		  for(Movie movie : getBestMovies()) {
-			  
-			  bestMovies += movie.getMovieTitle() + " , ";		  
-			  
-		  }
-		  
-		  model.addAttribute("name", name);
+	
+		  model.addAttribute("listType", "movies");
 		  model.addAttribute("title", "List of the BEST movies");
-		  model.addAttribute("list", bestMovies);
+		  model.addAttribute("list", getBestMovies());
 		  
 		  return "lists";
 		  
@@ -47,18 +40,11 @@ public class PageController {
 	  
 	  @GetMapping("/songs")
 	  public String songs(Model model) {
-		 
-		  String bestSongs = "";
+	
 		  
-		  for(Song song : getBestSongs()) {
-			  
-			  bestSongs += song.getSongTitle() + " , ";	
-			  
-		  }
-		  
-		  model.addAttribute("name", name);
+		  model.addAttribute("listType", "songs");
 		  model.addAttribute("title", "List of the BEST songs");
-		  model.addAttribute("list", bestSongs);
+		  model.addAttribute("list", getBestSongs());
 		  
 		  
 		  return "lists";
@@ -70,16 +56,16 @@ public class PageController {
 	  
 	  
 	  
-	  @GetMapping("/song/{id}")
+	  @GetMapping("/songs/{id}")
 	  public String songDetail(Model model, @PathVariable("id") Integer songId){
 		 
 		  String songName = "";
 		  
 		  for(Song song : getBestSongs()) {
 			  
-			  if (song.getSongId() == songId) {
+			  if (songId.equals(song.getId())) {
 				  
-				  songName = song.getSongTitle();	
+				  songName = song.getTitle();	
 				  break;
 			  }
 			  
@@ -93,16 +79,16 @@ public class PageController {
  
 	  }
 	  
-	  @GetMapping("/movie/{id}")
+	  @GetMapping("/movies/{id}")
 	  public String movieDetail(Model model, @PathVariable("id") Integer movieId){
 		 
 		  String movieName = "";
 		  
 		  for(Movie movie : getBestMovies()) {
 			  
-			  if (movie.getMovieId() == movieId) {
+			  if (movie.getId() == movieId) {
 				  
-				  movieName = movie.getMovieTitle();	
+				  movieName = movie.getTitle();	
 				  break;
 			  }
 			  
