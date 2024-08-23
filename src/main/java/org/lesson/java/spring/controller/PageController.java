@@ -34,7 +34,7 @@ public class PageController {
 		  model.addAttribute("title", "List of the BEST movies");
 		  model.addAttribute("list", getBestMovies());
 		  
-		  return "lists";
+		  return "movies";
 		  
 	  }
 	  
@@ -47,7 +47,7 @@ public class PageController {
 		  model.addAttribute("list", getBestSongs());
 		  
 		  
-		  return "lists";
+		  return "songs";
  
 	  }
 
