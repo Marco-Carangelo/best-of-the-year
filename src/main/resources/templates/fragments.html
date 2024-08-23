@@ -8,6 +8,17 @@
 	</head>
 <body>
 	
+
+	<block th:fragment:"head" >
+		
+		<title>[[${title}]]</title>
+				
+		<!-- Bootstrap CSS -->
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+		
+	</block>
+	
+	
 	<header th:fragment:"header">
 		
 		<nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
@@ -35,6 +46,14 @@
 		</nav>
 		
 	</header>
+	
+	
+	<block th:fragment:"scripts" >
+			
+			<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+			
+	</block>
+	
 	
 </body>
 </html>
