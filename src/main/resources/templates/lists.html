@@ -3,12 +3,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>[[${title}]]</title>
+		
+		<!-- Bootstrap CSS -->
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+		
+		
 	</head>
 <body>
-	<div>
-	<h1 th:text="'Best of the year by ' + ${name}"> </h1>	
-	<h2 th:text="${title}"/>:</h2>
-	<p th:text="${list}"></p>
-	</div>
+	<header th:replace="fragments :: header"></header>
+	<main>
+		<div class="container-md  text-center">
+			<div class="row">
+				<div class="col-10 mx-auto py-3 ">
+					<h2 th:text="'Best ' + ${listType}"></h2>				
+				</div>
+				
+				<div class="card mx-auto" style="width: 18rem;">
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item" th:each="element : ${list}"  th:insert="fragments :: element "></li>
+				  </ul>
+				</div>
+				
+			</div>
+		</div>
+			
+	</main>
+	
 </body>
 </html>
