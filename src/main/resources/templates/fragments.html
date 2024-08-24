@@ -2,21 +2,20 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<title>Fragments</title>
-
+		<th:block th:fragment:"head" >
+				
+			<title>[[${title}]]</title>
+						
+			<!-- Bootstrap CSS -->
+			<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
+				
+		</th:block>
 		
 	</head>
 <body>
 	
 
-	<block th:fragment:"head" >
-		
-		<title>[[${title}]]</title>
-				
-		<!-- Bootstrap CSS -->
-		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"/>
-		
-	</block>
+	
 	
 	
 	<header th:fragment:"header">

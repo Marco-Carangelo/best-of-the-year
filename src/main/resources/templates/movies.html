@@ -17,14 +17,14 @@
 				
 				<div class="card mx-auto" style="width: 18rem;">
 				  <ul class="list-group list-group-flush">
+					
 				    <li class="list-group-item"
 						th:each="element : ${list}">
-					
 						<a th:href="@{/movies/{elementId}(elementId=${element.id})}" >
 							[[${element.title}]]
 						</a>
-						
 					</li>
+					
 				  </ul>
 				</div>
 				
@@ -32,6 +32,8 @@
 		</div>
 			
 	</main>
+	
+	
 	
 </body>
 </html>

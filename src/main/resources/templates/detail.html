@@ -1,14 +1,19 @@
 <!DOCTYPE HTML>
 
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>[[${title}]]</title>
-	</head>
+	
+	<head th:insert="fragments :: head">
+		
 <body>
+	
+	<header th:replace="fragments :: header"></header>
+	
 	<div>
-	<h1 th:text="${title}"> </h1>	
-	<h2 th:text="'Selected '+ ${title.toLowerCase()} + ': ' + ${name}">:</h2>
-	<a href="http://localhost:8080/home">Homepage</a>
+		<h1 th:text="${title}"> </h1>	
+		<h2 th:text="'Selected '+ ${title.toLowerCase()} + ': ' + ${name}">:</h2>
+		
 	</div>
+	
+
 </body>
 </html>
