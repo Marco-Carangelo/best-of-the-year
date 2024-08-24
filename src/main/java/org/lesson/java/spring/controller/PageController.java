@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class PageController {
-	private String name = "Marco Carangelo";
+	private String name = "Marco ";
 	
 	  @GetMapping("/home")
 	  public String home(Model model) {
